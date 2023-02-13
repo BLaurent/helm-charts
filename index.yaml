@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  renderer:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-02-13T15:15:35.075608388Z"
+    description: A Helm chart for Kubernetes
+    digest: 4f3780064a262529eb16b82f25f2ff4ecf1078283c618702c0890de6b9a86208
+    name: renderer
+    type: application
+    urls:
+    - https://github.com/BLaurent/helm-charts/releases/download/renderer-0.1.0/renderer-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-02-13T15:15:35.075614989Z"
