@@ -20,3 +20,4 @@ dependencies:
     name: redis
     repository: oci://registry-1.docker.io/bitnamicharts
     version: 18.4.x
+

@@ -34,3 +34,4 @@ dependencies:
     name: echo-web-api
     repository: oci://registry-1.docker.io/blaurent
     version: 0.2.x
+
