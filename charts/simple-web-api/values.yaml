@@ -1,0 +1,43 @@
+commonSettings:
+  image:
+    # -- default registry to use
+    registryUrl: docker.io
+    # -- default container pull policy
+    pullPolicy: Always
+    # -- name of the repository to use
+    repository: blaurent
+  # -- control whether we want an ingress to be created
+  ingress: true
+  podLabels: {}
+  annotations:
+    # -- add version as annotation
+    version: 1.16.0
+
+simpleWebApi:
+  # -- number of replicas we want between (1-10) are valid values
+  replicaCount: 2
+  # -- set the env variable NB_WORKERS to 2, this limit the number of logical cpus used by the service
+  NB_WORKERS: 2
+  image:
+    # -- default repository
+    repository: blaurent/simple-web-api
+    # -- tag of the container
+    tag: v1.16.0
+  resources:
+    limits:
+      # -- 20% of 1 cpu
+      cpu: "200m"
+      # -- 128 mebibytes
+      memory: "128Mi"
+    requests:
+      # -- 10% of 1 cpu
+      cpu: "100m"
+      # -- 64 mebibytes
+      memory: "64Mi"
+nats:
+  # -- disable nats installation
+  enabled: true
+
+echo:
+  # -- disable echo installation
+  enabled: true

@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "commonSettings": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "object",
+          "properties": {
+            "registryUrl": {
+              "type": "string",
+              "default": "docker.io"
+            },
+            "pullPolicy": {
+              "type": "string",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "Always",
+                    "IfNotPresent",
+                    "Never"
+                  ]
+                }
+              ]
+            },
+            "repository": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "registryUrl",
+            "pullPolicy",
+            "repository"
+          ]
+        },
+        "ingress": {
+          "type": "boolean"
+        },
+        "podLabels": {
+          "type": "object"
+        },
+        "annotations": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "version"
+          ]
+        }
+      },
+      "required": [
+        "image",
+        "ingress",
+        "podLabels",
+        "annotations"
+      ]
+    },
+    "echoWebApi": {
+      "type": "object",
+      "properties": {
+        "replicaCount": {
+          "type": "integer",
+          "default": 1,
+          "minimum": 1,
+          "maximum": 10
+        },
+        "NB_WORKERS": {
+          "type": "integer",
+          "default": 2,
+          "minimum": 1,
+          "maximum": 20
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "type": "string",
+              "pattern": "^[a-z0-9-_/.]+$"
+            },
+            "tag": {
+              "type": "string",
+              "default": "Chart.appVersion",
+              "pattern": "^v(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$|^$"
+            }
+          },
+          "required": [
+            "repository",
+            "tag"
+          ]
+        },
+        "resources": {
+          "type": "object",
+          "properties": {
+            "limits": {
+              "type": "object",
+              "properties": {
+                "cpu": {
+                  "type": "string",
+                  "pattern": "^(100m|200m|300m|400m|500m)$"
+                },
+                "memory": {
+                  "type": "string",
+                  "pattern": "^(32Mi|64Mi|128Mi|256Mi|512Mi)$"
+                }
+              },
+              "required": [
+                "cpu",
+                "memory"
+              ]
+            },
+            "requests": {
+              "type": "object",
+              "properties": {
+                "cpu": {
+                  "type": "string",
+                  "pattern": "^(100m|200m|300m|400m|500m)$"
+                },
+                "memory": {
+                  "type": "string",
+                  "pattern": "^(32Mi|64Mi|128Mi|256Mi|512Mi)$"
+                }
+              },
+              "required": [
+                "cpu",
+                "memory"
+              ]
+            }
+          },
+          "required": [
+            "limits",
+            "requests"
+          ]
+        }
+      },
+      "required": [
+        "replicaCount",
+        "NB_WORKERS",
+        "image",
+        "resources"
+      ]
+    },
+    "redis": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    }
+  },
+  "required": [
+    "commonSettings",
+    "echoWebApi",
+    "redis"
+  ]
+}

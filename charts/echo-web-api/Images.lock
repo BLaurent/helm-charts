@@ -1,0 +1,48 @@
+apiVersion: v0
+kind: ImagesLock
+metadata:
+  generatedAt: "2023-11-30T16:40:18.835829Z"
+  generatedBy: Distribution Tooling for Helm
+chart:
+  name: echo-web-api
+  version: 0.2.0
+  appVersion: v1.6.0
+images:
+  - name: echo-web-api
+    image: blaurent/echo-web-api:v1.6.0
+    chart: echo-web-api
+    digests:
+      - digest: sha256:a90b98f1b3cbd523dd490480d61e3ebb51fffb6e7c5b4d90e0ebc74f4ef57fd9
+        arch: linux/arm64
+  - name: os-shell
+    image: docker.io/bitnami/os-shell:11-debian-11-r91
+    chart: redis
+    digests:
+      - digest: sha256:13a0068e1f90216e7450c1284d51d1e2770db4eb40a51692de213d1e3a402a34
+        arch: linux/amd64
+      - digest: sha256:ccbf37fe114e2ba833082b3f2c36a0e16d4c04ee92dce50272d66393706fe938
+        arch: linux/arm64
+  - name: redis-exporter
+    image: docker.io/bitnami/redis-exporter:1.55.0-debian-11-r2
+    chart: redis
+    digests:
+      - digest: sha256:9a67c0b6930b742c6d6449e432219f7abb903a27d7226b42e82065054f27c6f8
+        arch: linux/amd64
+      - digest: sha256:a96c9aba11ec94b87124aaf15ce7a62bb012410b62fd9368cbbb7d71f57a8226
+        arch: linux/arm64
+  - name: redis-sentinel
+    image: docker.io/bitnami/redis-sentinel:7.2.3-debian-11-r1
+    chart: redis
+    digests:
+      - digest: sha256:49dbae39d5dcb6b4c1844d94b3b85363232162169aedde00dc331891365537d3
+        arch: linux/amd64
+      - digest: sha256:8f5893dd71ea2c96bfcac474b63456eb91d91d33e5e62d378d3efc24b06f55b6
+        arch: linux/arm64
+  - name: redis
+    image: docker.io/bitnami/redis:7.2.3-debian-11-r1
+    chart: redis
+    digests:
+      - digest: sha256:f7db3a51e2726109819b50004c3bbf8f1c792723af274f88532b8c3e64fcde0b
+        arch: linux/amd64
+      - digest: sha256:9417df92fa9ddfef3f937955b255a06f0959b9cd57c5d6a19d9b7c064a58bbc8
+        arch: linux/arm64

@@ -1,0 +1,33 @@
+apiVersion: v2
+name: simple-web-api
+icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
+description: An Helm chart to test deployment and various concept in rust
+type: application
+version: 0.1.0
+appVersion: v1.16.0
+annotations:
+  extension_version: 0.0.1
+  category: Infrastructure
+  images: |
+    - name: simple-web-api
+      image: blaurent/simple-web-api:v1.16.0
+  requirements: |
+    - name: echo-web-api 
+      type: helm
+      version: 1.2.1
+    - name: flask-web-api
+      type: service 
+      version: 0.0.1
+  env: |
+    - name: NB_WORKERS
+      value: 2
+      description: "Set the number of workers to be used. This correspond to the number of logical cpus"
+dependencies:
+  - condition: nats.enabled
+    name: nats
+    repository: oci://registry-1.docker.io/bitnamicharts
+    version: 7.9.x
+  - condition: echo.enabled
+    name: echo-web-api
+    repository: oci://registry-1.docker.io/blaurent
+    version: 0.2.x

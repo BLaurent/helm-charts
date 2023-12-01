@@ -1,0 +1,66 @@
+apiVersion: imaging-fabric.health.ge.com/v1alpha1
+kind: Application
+metadata:
+  name: simple-web-api
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    imaging-fabric.health.ge.com/require-reconciliation: "true"
+    {{- if .Values.commonSettings.annotations }}
+      {{ toYaml .Values.commonSettings.annotations | nindent 4 }}
+    {{- end }}
+  labels:
+    {{- include "imaging-fabric.labels" . | nindent 4 }}
+    {{- if .Values.commonSettings.podLabels }}
+      {{ toYaml .Values.commonSettings.podLabels | nindent 4 }}
+    {{ end }}
+    app.kubernetes.io/component: simple-web-api
+spec:
+  replicas: {{ .Values.simpleWebApi.replicaCount }}
+  env:
+    - name: NB_WORKERS 
+      value: {{ quote .Values.simpleWebApi.NB_WORKERS }}
+  securityContext:
+    {{- tuple "simple-web-api" | include "imaging-fabric.securityContext" | nindent 4 }}
+  resources:
+    {{- toYaml .Values.simpleWebApi.resources | nindent 4 }}
+  image:
+    {{- toYaml .Values.simpleWebApi.image | nindent 4 }}
+    registryUrl: {{ .Values.commonSettings.image.registryUrl }}
+  healthCheck:
+    liveness:
+      type: http
+      port: 8080
+      httpGet: /v1/healthz
+      timeoutSeconds: 1
+    readiness:
+      type: http
+      port: 8080
+      httpGet: /v1/readyz
+      timeoutSeconds: 1
+  traits:
+    - internalService:
+        ports:
+          - port: 8080
+            name: http
+    - ingress:
+        routes:
+          - httpPath: /v1
+            portName: http
+            httpMethod:
+              - GET
+          - httpPath: /v1/echo
+            portName: http
+            httpMethod: 
+              - GET
+          - httpPath: /v1/healthz
+            portName: http
+            httpMethod:
+              - GET
+          - httpPath: /v1/readyz
+            portName: http
+            httpMethod:
+              - GET
+          - httpPath: /hey
+            portName: http
+            httpMethod:
+              - GET

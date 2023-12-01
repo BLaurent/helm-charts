@@ -1,0 +1,9 @@
+dependencies:
+- name: nats
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 7.9.10
+- name: echo-web-api
+  repository: oci://registry-1.docker.io/blaurent
+  version: 0.2.0
+digest: sha256:0ab9b5c6a71513ddc26e2021f20640aecfd418a46bca1f2ff70c734c7461c42a
+generated: "2023-11-30T15:55:55.155138+01:00"
