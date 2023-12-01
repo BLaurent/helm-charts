@@ -1,5 +1,30 @@
 apiVersion: v1
 entries:
+  echo-web-api:
+  - annotations:
+      category: Infrastructure
+      env: "- name: NB_WORKERS\n  value: 4 \n  description: \"Set the number of workers
+        to be used.\"\n"
+      extension_version: 0.0.1
+      images: |
+        - name: echo-web-api
+          image: blaurent/echo-web-api:v1.6.0
+    apiVersion: v2
+    appVersion: v1.6.0
+    created: "2023-12-01T09:17:49.680130808Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 18.4.x
+    description: An Helm chart to test deployment and various concept in python
+    digest: 76ce1ba17486c0b801ae1c711d43dd0b2fb6088d5c49455cd3ce30b8d7dfcb07
+    icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
+    name: echo-web-api
+    type: application
+    urls:
+    - https://github.com/BLaurent/helm-charts/releases/download/echo-web-api-0.2.0/echo-web-api-0.2.0.tgz
+    version: 0.2.0
   renderer:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -11,4 +36,37 @@ entries:
     urls:
     - https://github.com/BLaurent/helm-charts/releases/download/renderer-0.1.0/renderer-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-13T15:15:35.075614989Z"
+  simple-web-api:
+  - annotations:
+      category: Infrastructure
+      env: |
+        - name: NB_WORKERS
+          value: 2
+          description: "Set the number of workers to be used. This correspond to the number of logical cpus"
+      extension_version: 0.0.1
+      images: |
+        - name: simple-web-api
+          image: blaurent/simple-web-api:v1.16.0
+      requirements: "- name: echo-web-api \n  type: helm\n  version: 1.2.1\n- name:
+        flask-web-api\n  type: service \n  version: 0.0.1\n"
+    apiVersion: v2
+    appVersion: v1.16.0
+    created: "2023-12-01T09:17:49.919221995Z"
+    dependencies:
+    - condition: nats.enabled
+      name: nats
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 7.9.x
+    - condition: echo.enabled
+      name: echo-web-api
+      repository: oci://registry-1.docker.io/blaurent
+      version: 0.2.x
+    description: An Helm chart to test deployment and various concept in rust
+    digest: 7debf91e611f317c6af7297f70bb8b809da02685a3a3eb7d7af01c1b56d99b3e
+    icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
+    name: simple-web-api
+    type: application
+    urls:
+    - https://github.com/BLaurent/helm-charts/releases/download/simple-web-api-0.1.0/simple-web-api-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-12-01T09:17:49.919232464Z"
