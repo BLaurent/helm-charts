@@ -22,6 +22,9 @@ annotations:
     - name: NB_WORKERS
       value: 2
       description: "Set the number of workers to be used. This correspond to the number of logical cpus"
+    - name: POOL_SIZE
+      value: 10 
+      description: "Set the size of the memory pool to be used in http server"
 dependencies:
   - condition: nats.enabled
     name: nats
