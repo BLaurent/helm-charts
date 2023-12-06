@@ -1,6 +1,6 @@
 # simple-web-api
 
-![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.16.0](https://img.shields.io/badge/AppVersion-v1.16.0-informational?style=flat-square)
+![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.16.0](https://img.shields.io/badge/AppVersion-v1.16.0-informational?style=flat-square)
 
 An Helm chart to test deployment and various concept in rust
 
@@ -8,6 +8,7 @@ An Helm chart to test deployment and various concept in rust
 
 | Repository | Name | Version |
 |------------|------|---------|
+| https://kedacore.github.io/charts/ | keda | 2.12.x |
 | oci://registry-1.docker.io/bitnamicharts | nats | 7.9.x |
 | oci://registry-1.docker.io/blaurent | echo-web-api | 0.2.x |
 
@@ -22,6 +23,7 @@ An Helm chart to test deployment and various concept in rust
 | commonSettings.ingress | bool | `true` | control whether we want an ingress to be created |
 | commonSettings.podLabels | object | `{}` |  |
 | echo.enabled | bool | `true` | disable echo installation |
+| keda.enabled | bool | `true` | disable keda installation |
 | nats.enabled | bool | `true` | disable nats installation |
 | simpleWebApi.NB_WORKERS | int | `2` | set the env variable NB_WORKERS to 2, this limit the number of logical cpus used by the service |
 | simpleWebApi.image.repository | string | `"blaurent/simple-web-api"` | default repository |

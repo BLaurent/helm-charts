@@ -5,5 +5,8 @@ dependencies:
 - name: echo-web-api
   repository: oci://registry-1.docker.io/blaurent
   version: 0.2.0
-digest: sha256:0ab9b5c6a71513ddc26e2021f20640aecfd418a46bca1f2ff70c734c7461c42a
-generated: "2023-11-30T15:55:55.155138+01:00"
+- name: keda
+  repository: https://kedacore.github.io/charts/
+  version: 2.12.1
+digest: sha256:7f26626e963f30fb0ff7cb3a8e9e9a3b0f1cc5e214bd3fa56112a046f36cef88
+generated: "2023-12-06T16:47:29.82659+01:00"

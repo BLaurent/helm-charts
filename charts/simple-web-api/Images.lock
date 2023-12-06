@@ -1,11 +1,11 @@
 apiVersion: v0
 kind: ImagesLock
 metadata:
-  generatedAt: "2023-12-01T15:44:19.76168Z"
+  generatedAt: "2023-12-06T15:51:18.979926Z"
   generatedBy: Distribution Tooling for Helm
 chart:
   name: simple-web-api
-  version: 0.3.0
+  version: 0.4.0
   appVersion: v1.16.0
 images:
   - name: simple-web-api
@@ -13,6 +13,22 @@ images:
     chart: simple-web-api
     digests:
       - digest: sha256:123bea21f884b75b774c001aedf5c7fe61eb33f88f0678f3907a2fbd573b0ae1
+        arch: linux/arm64
+  - name: nats-exporter
+    image: docker.io/bitnami/nats-exporter:0.12.0-debian-11-r97
+    chart: nats
+    digests:
+      - digest: sha256:71ce12635bd4872e726603cda762b8f8b598d026be9b00779cbe400b99e73667
+        arch: linux/amd64
+      - digest: sha256:ea792a27d579aac1653f105d879bc7f543af85c74f99640d5c256809fdcc49be
+        arch: linux/arm64
+  - name: nats
+    image: docker.io/bitnami/nats:2.10.4-debian-11-r0
+    chart: nats
+    digests:
+      - digest: sha256:d39f1ff561bd44cb2926558f3bff36a262a8590791bb6281e27eea03091e2ca8
+        arch: linux/amd64
+      - digest: sha256:4942e872ecd2b3b79a140868e5bc5316026bed1860c9398baee002b8e9c229f7
         arch: linux/arm64
   - name: echo-web-api
     image: blaurent/echo-web-api:v1.6.0
@@ -51,20 +67,4 @@ images:
       - digest: sha256:f7db3a51e2726109819b50004c3bbf8f1c792723af274f88532b8c3e64fcde0b
         arch: linux/amd64
       - digest: sha256:9417df92fa9ddfef3f937955b255a06f0959b9cd57c5d6a19d9b7c064a58bbc8
-        arch: linux/arm64
-  - name: nats-exporter
-    image: docker.io/bitnami/nats-exporter:0.12.0-debian-11-r97
-    chart: nats
-    digests:
-      - digest: sha256:71ce12635bd4872e726603cda762b8f8b598d026be9b00779cbe400b99e73667
-        arch: linux/amd64
-      - digest: sha256:ea792a27d579aac1653f105d879bc7f543af85c74f99640d5c256809fdcc49be
-        arch: linux/arm64
-  - name: nats
-    image: docker.io/bitnami/nats:2.10.4-debian-11-r0
-    chart: nats
-    digests:
-      - digest: sha256:d39f1ff561bd44cb2926558f3bff36a262a8590791bb6281e27eea03091e2ca8
-        arch: linux/amd64
-      - digest: sha256:4942e872ecd2b3b79a140868e5bc5316026bed1860c9398baee002b8e9c229f7
         arch: linux/arm64

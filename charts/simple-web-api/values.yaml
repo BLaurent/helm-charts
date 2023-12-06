@@ -41,3 +41,7 @@ nats:
 echo:
   # -- disable echo installation
   enabled: true
+
+keda:
+  # -- disable keda installation
+  enabled: true
