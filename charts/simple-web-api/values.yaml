@@ -42,6 +42,6 @@ echo:
   # -- disable echo installation
   enabled: true
 
-keda:
-  # -- disable keda installation
+wordpress:
+  # -- disable wordpress installation
   enabled: true

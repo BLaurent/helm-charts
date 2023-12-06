@@ -5,8 +5,8 @@ dependencies:
 - name: echo-web-api
   repository: oci://registry-1.docker.io/blaurent
   version: 0.2.0
-- name: keda
-  repository: https://kedacore.github.io/charts/
-  version: 2.12.1
-digest: sha256:7f26626e963f30fb0ff7cb3a8e9e9a3b0f1cc5e214bd3fa56112a046f36cef88
-generated: "2023-12-06T16:47:29.82659+01:00"
+- name: wordpress
+  repository: https://repo.vmware.com/bitnami-files
+  version: 18.1.21
+digest: sha256:7ed8fcc877b7f4c0d1e32efd6eb7f95faf23c505104ecd723839358d799b359f
+generated: "2023-12-06T17:11:29.075084+01:00"

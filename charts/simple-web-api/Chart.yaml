@@ -34,8 +34,8 @@ dependencies:
     name: echo-web-api
     repository: oci://registry-1.docker.io/blaurent
     version: 0.2.x
-  - condition: keda.enabled
-    name: keda
-    repository: https://kedacore.github.io/charts/
-    version: 2.12.x
+  - condition: wordpress.enabled
+    name: wordpress
+    repository: https://repo.vmware.com/bitnami-files
+    version: 18.1.x
 
