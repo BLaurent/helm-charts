@@ -8,7 +8,7 @@ An Helm chart to test deployment and various concept in rust
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://repo.vmware.com/bitnami-files | wordpress | 18.1.x |
+| https://charts.bitnami.com/bitnami | wordpress | 18.1.x |
 | oci://registry-1.docker.io/bitnamicharts | nats | 7.9.x |
 | oci://registry-1.docker.io/blaurent | echo-web-api | 0.2.x |
 

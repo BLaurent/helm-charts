@@ -36,6 +36,6 @@ dependencies:
     version: 0.2.x
   - condition: wordpress.enabled
     name: wordpress
-    repository: https://repo.vmware.com/bitnami-files
+    repository: https://charts.bitnami.com/bitnami
     version: 18.1.x
 

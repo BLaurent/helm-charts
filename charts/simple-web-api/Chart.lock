@@ -6,7 +6,7 @@ dependencies:
   repository: oci://registry-1.docker.io/blaurent
   version: 0.2.0
 - name: wordpress
-  repository: https://repo.vmware.com/bitnami-files
+  repository: https://charts.bitnami.com/bitnami
   version: 18.1.21
-digest: sha256:7ed8fcc877b7f4c0d1e32efd6eb7f95faf23c505104ecd723839358d799b359f
-generated: "2023-12-06T17:11:29.075084+01:00"
+digest: sha256:43c437274e31707dfc1a1c0bc8bf1cec9073a977655bfec4309323bfe39c0bba
+generated: "2023-12-06T17:40:57.861855+01:00"
