@@ -1,4 +1,6 @@
+# -- commonhparameters 
 commonSettings:
+  # -- configure image related parameters
   image:
     # -- default registry to use
     registryUrl: docker.io
@@ -39,14 +41,17 @@ simpleWebApi:
       # -- 64 mebibytes
       memory: "64Mi"
 
+# -- configure sub-chart for nats
 nats:
   # -- disable nats installation
   enabled: true
 
+# -- configure sub-chart for echo
 echo:
   # -- disable echo installation
   enabled: true
 
+# -- configure sub-chart for wordpress
 wordpress:
   # -- disable wordpress installation
   enabled: true

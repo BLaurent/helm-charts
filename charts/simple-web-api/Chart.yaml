@@ -3,7 +3,7 @@ name: simple-web-api
 icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
 description: An Helm chart to test deployment and various concept in rust
 type: application
-version: 0.4.0
+version: 0.5.0
 appVersion: v1.16.0
 annotations:
   extension_version: 0.0.1

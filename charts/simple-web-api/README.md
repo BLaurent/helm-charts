@@ -1,6 +1,6 @@
 # simple-web-api
 
-![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.16.0](https://img.shields.io/badge/AppVersion-v1.16.0-informational?style=flat-square)
+![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.16.0](https://img.shields.io/badge/AppVersion-v1.16.0-informational?style=flat-square)
 
 An Helm chart to test deployment and various concept in rust
 
@@ -16,13 +16,16 @@ An Helm chart to test deployment and various concept in rust
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| commonSettings | object | `{"annotations":{"version":"1.16.0"},"image":{"pullPolicy":"Always","registryUrl":"docker.io","repository":"blaurent"},"ingress":true,"podLabels":{}}` | commonhparameters  |
 | commonSettings.annotations.version | string | `"1.16.0"` | add version as annotation |
+| commonSettings.image | object | `{"pullPolicy":"Always","registryUrl":"docker.io","repository":"blaurent"}` | configure image related parameters |
 | commonSettings.image.pullPolicy | string | `"Always"` | default container pull policy |
 | commonSettings.image.registryUrl | string | `"docker.io"` | default registry to use |
 | commonSettings.image.repository | string | `"blaurent"` | name of the repository to use |
 | commonSettings.ingress | bool | `true` | control whether we want an ingress to be created |
-| commonSettings.podLabels | object | `{}` |  |
+| echo | object | `{"enabled":true}` | congigure sub-chart for echo |
 | echo.enabled | bool | `true` | disable echo installation |
+| nats | object | `{"enabled":true}` | congigure sub-chart for nats |
 | nats.enabled | bool | `true` | disable nats installation |
 | simpleWebApi | object | `{"NB_WORKERS":2,"image":{"repository":"blaurent/simple-web-api","tag":"v1.16.0"},"replicaCount":2,"resources":{"limits":{"cpu":"200m","memory":"128Mi"},"requests":{"cpu":"100m","memory":"64Mi"}}}` | Configuration of the simple-web-api service  |
 | simpleWebApi.NB_WORKERS | int | `2` | set the env variable NB_WORKERS to 2, this limit the number of logical cpus used by the service |
@@ -36,6 +39,7 @@ An Helm chart to test deployment and various concept in rust
 | simpleWebApi.resources.requests | object | `{"cpu":"100m","memory":"64Mi"}` | define weighting on how ressources we can use  |
 | simpleWebApi.resources.requests.cpu | string | `"100m"` | 10% of 1 cpu |
 | simpleWebApi.resources.requests.memory | string | `"64Mi"` | 64 mebibytes |
+| wordpress | object | `{"enabled":true}` | congigure sub-chart for wordpress |
 | wordpress.enabled | bool | `true` | disable wordpress installation |
 
 ----------------------------------------------
