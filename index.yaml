@@ -75,6 +75,42 @@ entries:
         flask-web-api\n  type: service \n  version: 0.0.1\n"
     apiVersion: v2
     appVersion: v1.16.0
+    created: "2023-12-11T14:40:18.827027222Z"
+    dependencies:
+    - condition: nats.enabled
+      name: nats
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 7.9.x
+    - condition: echo.enabled
+      name: echo-web-api
+      repository: oci://registry-1.docker.io/blaurent
+      version: 0.4.x
+    - condition: wordpress.enabled
+      name: wordpress
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.1.x
+    description: An Helm chart to test deployment and various concept in rust
+    digest: e1d86d9d691e7cb63a3a812f5285a50e77643e12f83033d4babdbd72c1e3774d
+    icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
+    name: simple-web-api
+    type: application
+    urls:
+    - https://github.com/BLaurent/helm-charts/releases/download/simple-web-api-0.5.0/simple-web-api-0.5.0.tgz
+    version: 0.5.0
+  - annotations:
+      category: Infrastructure
+      env: "- name: NB_WORKERS\n  value: 2\n  description: \"Set the number of workers
+        to be used. This correspond to the number of logical cpus\"\n- name: POOL_SIZE\n
+        \ value: 10 \n  description: \"Set the size of the memory pool to be used
+        in http server\"\n"
+      extension_version: 0.0.1
+      images: |
+        - name: simple-web-api
+          image: blaurent/simple-web-api:v1.16.0
+      requirements: "- name: echo-web-api \n  type: helm\n  version: 1.2.1\n- name:
+        flask-web-api\n  type: service \n  version: 0.0.1\n"
+    apiVersion: v2
+    appVersion: v1.16.0
     created: "2023-12-06T16:45:03.610801063Z"
     dependencies:
     - condition: nats.enabled
@@ -161,4 +197,4 @@ entries:
     urls:
     - https://github.com/BLaurent/helm-charts/releases/download/simple-web-api-0.1.0/simple-web-api-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-06T16:45:03.610814749Z"
+generated: "2023-12-11T14:40:18.827043843Z"
