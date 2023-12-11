@@ -29,7 +29,7 @@ jobs:
           version: 'latest'
           token: "${{ secrets.GITHUB_TOKEN }}" 
 
-      - name: Install Helm repository
+      - name: Add dependency chart repo
         run: |
           helm repo add bitnami https://charts.bitnami.com/bitnami
 

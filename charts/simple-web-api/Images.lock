@@ -1,7 +1,7 @@
 apiVersion: v0
 kind: ImagesLock
 metadata:
-  generatedAt: "2023-12-06T16:41:07.674477Z"
+  generatedAt: "2023-12-11T14:16:14.893348Z"
   generatedBy: Distribution Tooling for Helm
 chart:
   name: simple-web-api
@@ -18,7 +18,7 @@ images:
     image: blaurent/echo-web-api:v1.6.0
     chart: echo-web-api
     digests:
-      - digest: sha256:aea67fa788ea14e3ee31f66c96e66d76094eb336e466c0590b4b1b34e552f40b
+      - digest: sha256:eedc1050603912a2af2ea374bff80c875faccaf20c113dec4f2e7da8bf508c54
         arch: linux/arm64
   - name: os-shell
     image: docker.io/bitnami/os-shell:11-debian-11-r91
@@ -69,28 +69,28 @@ images:
       - digest: sha256:4942e872ecd2b3b79a140868e5bc5316026bed1860c9398baee002b8e9c229f7
         arch: linux/arm64
   - name: apache-exporter
-    image: docker.io/bitnami/apache-exporter:1.0.3-debian-11-r1
+    image: docker.io/bitnami/apache-exporter:1.0.3-debian-11-r2
     chart: wordpress
     digests:
-      - digest: sha256:612640817b902f2ee253c331894454d7ca143e1aa68849365a6076d87ce0d3e6
+      - digest: sha256:d990fe072ad20b4e631d7a0bc6f06ef05a6e1804e720996302246096bedcdf8d
         arch: linux/amd64
-      - digest: sha256:45818b31596e05ed0298653a75f0385407973c003aeb599ea28ce672b98e2b0f
+      - digest: sha256:0485ac98bbdb67b5ba432d5153e0f1e4cbca38d4d50acebe5fc34782af2064e0
         arch: linux/arm64
   - name: os-shell
-    image: docker.io/bitnami/os-shell:11-debian-11-r91
+    image: docker.io/bitnami/os-shell:11-debian-11-r92
     chart: wordpress
     digests:
-      - digest: sha256:13a0068e1f90216e7450c1284d51d1e2770db4eb40a51692de213d1e3a402a34
+      - digest: sha256:4ecfc3f9975a81d23bf5f3f49e5c8735208ad685dbc0cc131209d3b7d82701a6
         arch: linux/amd64
-      - digest: sha256:ccbf37fe114e2ba833082b3f2c36a0e16d4c04ee92dce50272d66393706fe938
+      - digest: sha256:7e98a85bf40b167c67c37bf85b805bb4b8be68309abc0df55482fc252a921548
         arch: linux/arm64
   - name: wordpress
-    image: docker.io/bitnami/wordpress:6.4.1-debian-11-r11
+    image: docker.io/bitnami/wordpress:6.4.2-debian-11-r0
     chart: wordpress
     digests:
-      - digest: sha256:83d1f3405870f95dee493703d0825bbfbc4b83e700042687f6aef1474fac1b40
+      - digest: sha256:557e6d367ca0a5ecfb511a4eaf2ff5eea2d6e0c7d4c0bf9383d83595196f093d
         arch: linux/amd64
-      - digest: sha256:4f08c4d02a033da8e2e02a69c823551de63eca35728d0fbc840b1ac5eeaf1eba
+      - digest: sha256:978d0fd2bd12ea8f3c7e094a9dbc2b47a15739573b951750d6174ed902d632cd
         arch: linux/arm64
   - name: mariadb
     image: docker.io/bitnami/mariadb:11.1.3-debian-11-r0

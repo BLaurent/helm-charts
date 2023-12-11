@@ -33,7 +33,7 @@ dependencies:
   - condition: echo.enabled
     name: echo-web-api
     repository: oci://registry-1.docker.io/blaurent
-    version: 0.2.x
+    version: 0.4.x
   - condition: wordpress.enabled
     name: wordpress
     repository: https://charts.bitnami.com/bitnami

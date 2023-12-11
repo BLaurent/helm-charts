@@ -13,6 +13,7 @@ commonSettings:
     # -- add version as annotation
     version: 1.16.0
 
+# -- Configuration of the simple-web-api service 
 simpleWebApi:
   # -- number of replicas we want between (1-10) are valid values
   replicaCount: 2
@@ -23,17 +24,21 @@ simpleWebApi:
     repository: blaurent/simple-web-api
     # -- tag of the container
     tag: v1.16.0
+  # -- Configuration of ressources
   resources:
+    # -- define hardceiling on how ressources we can use 
     limits:
       # -- 20% of 1 cpu
       cpu: "200m"
       # -- 128 mebibytes
       memory: "128Mi"
+    # -- define weighting on how ressources we can use 
     requests:
       # -- 10% of 1 cpu
       cpu: "100m"
       # -- 64 mebibytes
       memory: "64Mi"
+
 nats:
   # -- disable nats installation
   enabled: true

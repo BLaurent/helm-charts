@@ -10,7 +10,7 @@ An Helm chart to test deployment and various concept in rust
 |------------|------|---------|
 | https://charts.bitnami.com/bitnami | wordpress | 18.1.x |
 | oci://registry-1.docker.io/bitnamicharts | nats | 7.9.x |
-| oci://registry-1.docker.io/blaurent | echo-web-api | 0.2.x |
+| oci://registry-1.docker.io/blaurent | echo-web-api | 0.4.x |
 
 ## Values
 
@@ -24,12 +24,16 @@ An Helm chart to test deployment and various concept in rust
 | commonSettings.podLabels | object | `{}` |  |
 | echo.enabled | bool | `true` | disable echo installation |
 | nats.enabled | bool | `true` | disable nats installation |
+| simpleWebApi | object | `{"NB_WORKERS":2,"image":{"repository":"blaurent/simple-web-api","tag":"v1.16.0"},"replicaCount":2,"resources":{"limits":{"cpu":"200m","memory":"128Mi"},"requests":{"cpu":"100m","memory":"64Mi"}}}` | Configuration of the simple-web-api service  |
 | simpleWebApi.NB_WORKERS | int | `2` | set the env variable NB_WORKERS to 2, this limit the number of logical cpus used by the service |
 | simpleWebApi.image.repository | string | `"blaurent/simple-web-api"` | default repository |
 | simpleWebApi.image.tag | string | `"v1.16.0"` | tag of the container |
 | simpleWebApi.replicaCount | int | `2` | number of replicas we want between (1-10) are valid values |
+| simpleWebApi.resources | object | `{"limits":{"cpu":"200m","memory":"128Mi"},"requests":{"cpu":"100m","memory":"64Mi"}}` | Configuration of ressources |
+| simpleWebApi.resources.limits | object | `{"cpu":"200m","memory":"128Mi"}` | define hardceiling on how ressources we can use  |
 | simpleWebApi.resources.limits.cpu | string | `"200m"` | 20% of 1 cpu |
 | simpleWebApi.resources.limits.memory | string | `"128Mi"` | 128 mebibytes |
+| simpleWebApi.resources.requests | object | `{"cpu":"100m","memory":"64Mi"}` | define weighting on how ressources we can use  |
 | simpleWebApi.resources.requests.cpu | string | `"100m"` | 10% of 1 cpu |
 | simpleWebApi.resources.requests.memory | string | `"64Mi"` | 64 mebibytes |
 | wordpress.enabled | bool | `true` | disable wordpress installation |
