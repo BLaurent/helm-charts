@@ -11,6 +11,30 @@ entries:
           image: blaurent/echo-web-api:v1.6.0
     apiVersion: v2
     appVersion: v1.6.0
+    created: "2023-12-19T17:52:26.838102963Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 18.4.x
+    description: An Helm chart to test deployment and various concept in python
+    digest: 9c2739d71e3879124a2d9b77de5a7aa938f595d4990b56f294f731fdb80a55a0
+    icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
+    name: echo-web-api
+    type: application
+    urls:
+    - https://github.com/BLaurent/helm-charts/releases/download/echo-web-api-0.6.0/echo-web-api-0.6.0.tgz
+    version: 0.6.0
+  - annotations:
+      category: Infrastructure
+      env: "- name: NB_WORKERS\n  value: 4 \n  description: \"Set the number of workers
+        to be used.\"\n"
+      extension_version: 0.0.1
+      images: |
+        - name: echo-web-api
+          image: blaurent/echo-web-api:v1.6.0
+    apiVersion: v2
+    appVersion: v1.6.0
     created: "2023-12-19T17:35:53.830401336Z"
     dependencies:
     - condition: redis.enabled
@@ -221,4 +245,4 @@ entries:
     urls:
     - https://github.com/BLaurent/helm-charts/releases/download/simple-web-api-0.1.0/simple-web-api-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-19T17:35:53.983112458Z"
+generated: "2023-12-19T17:52:26.981741549Z"
