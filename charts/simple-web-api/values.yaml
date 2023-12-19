@@ -1,4 +1,4 @@
-# -- commonhparameters 
+# -- common parameters 
 commonSettings:
   # -- configure image related parameters
   image:
@@ -21,6 +21,7 @@ simpleWebApi:
   replicaCount: 2
   # -- set the env variable NB_WORKERS to 2, this limit the number of logical cpus used by the service
   NB_WORKERS: 2
+  # -- configure image parameters for simpleWebApi service
   image:
     # -- default repository
     repository: blaurent/simple-web-api

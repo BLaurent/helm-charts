@@ -1,6 +1,6 @@
 # echo-web-api
 
-![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.6.0](https://img.shields.io/badge/AppVersion-v1.6.0-informational?style=flat-square)
+![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.6.0](https://img.shields.io/badge/AppVersion-v1.6.0-informational?style=flat-square)
 
 An Helm chart to test deployment and various concept in python
 
@@ -14,12 +14,12 @@ An Helm chart to test deployment and various concept in python
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| commonSettings | object | `{"annotations":{"version":"1.6.0"},"image":{"pullPolicy":"Always","registryUrl":"docker.io","repository":"blaurent"},"ingress":true,"podLabels":{}}` | common parameters |
 | commonSettings.annotations.version | string | `"1.6.0"` | add version as annotation |
 | commonSettings.image.pullPolicy | string | `"Always"` | default container pull policy |
 | commonSettings.image.registryUrl | string | `"docker.io"` | default registry to use |
 | commonSettings.image.repository | string | `"blaurent"` | name of the repository to use |
 | commonSettings.ingress | bool | `true` | control whether we want an ingress to be created |
-| commonSettings.podLabels | object | `{}` |  |
 | echoWebApi.NB_WORKERS | int | `2` | set the env variable NB_WORKERS to 2, this limit the number of logical cpus used by the service |
 | echoWebApi.image.repository | string | `"blaurent/echo-web-api"` | default repository |
 | echoWebApi.image.tag | string | `"v1.6.0"` | tag of the container |

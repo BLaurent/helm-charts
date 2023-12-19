@@ -10,25 +10,26 @@ An Helm chart to test deployment and various concept in rust
 |------------|------|---------|
 | https://charts.bitnami.com/bitnami | wordpress | 18.1.x |
 | oci://registry-1.docker.io/bitnamicharts | nats | 7.9.x |
-| oci://registry-1.docker.io/blaurent | echo-web-api | 0.4.x |
+| oci://registry-1.docker.io/blaurent | echo-web-api | 0.5.x |
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| commonSettings | object | `{"annotations":{"version":"1.16.0"},"image":{"pullPolicy":"Always","registryUrl":"docker.io","repository":"blaurent"},"ingress":true,"podLabels":{}}` | commonhparameters  |
+| commonSettings | object | `{"annotations":{"version":"1.16.0"},"image":{"pullPolicy":"Always","registryUrl":"docker.io","repository":"blaurent"},"ingress":true,"podLabels":{}}` | common parameters  |
 | commonSettings.annotations.version | string | `"1.16.0"` | add version as annotation |
 | commonSettings.image | object | `{"pullPolicy":"Always","registryUrl":"docker.io","repository":"blaurent"}` | configure image related parameters |
 | commonSettings.image.pullPolicy | string | `"Always"` | default container pull policy |
 | commonSettings.image.registryUrl | string | `"docker.io"` | default registry to use |
 | commonSettings.image.repository | string | `"blaurent"` | name of the repository to use |
 | commonSettings.ingress | bool | `true` | control whether we want an ingress to be created |
-| echo | object | `{"enabled":true}` | congigure sub-chart for echo |
+| echo | object | `{"enabled":true}` | configure sub-chart for echo |
 | echo.enabled | bool | `true` | disable echo installation |
-| nats | object | `{"enabled":true}` | congigure sub-chart for nats |
+| nats | object | `{"enabled":true}` | configure sub-chart for nats |
 | nats.enabled | bool | `true` | disable nats installation |
 | simpleWebApi | object | `{"NB_WORKERS":2,"image":{"repository":"blaurent/simple-web-api","tag":"v1.16.0"},"replicaCount":2,"resources":{"limits":{"cpu":"200m","memory":"128Mi"},"requests":{"cpu":"100m","memory":"64Mi"}}}` | Configuration of the simple-web-api service  |
 | simpleWebApi.NB_WORKERS | int | `2` | set the env variable NB_WORKERS to 2, this limit the number of logical cpus used by the service |
+| simpleWebApi.image | object | `{"repository":"blaurent/simple-web-api","tag":"v1.16.0"}` | configure image parameters for simpleWebApi service |
 | simpleWebApi.image.repository | string | `"blaurent/simple-web-api"` | default repository |
 | simpleWebApi.image.tag | string | `"v1.16.0"` | tag of the container |
 | simpleWebApi.replicaCount | int | `2` | number of replicas we want between (1-10) are valid values |
@@ -39,7 +40,7 @@ An Helm chart to test deployment and various concept in rust
 | simpleWebApi.resources.requests | object | `{"cpu":"100m","memory":"64Mi"}` | define weighting on how ressources we can use  |
 | simpleWebApi.resources.requests.cpu | string | `"100m"` | 10% of 1 cpu |
 | simpleWebApi.resources.requests.memory | string | `"64Mi"` | 64 mebibytes |
-| wordpress | object | `{"enabled":true}` | congigure sub-chart for wordpress |
+| wordpress | object | `{"enabled":true}` | configure sub-chart for wordpress |
 | wordpress.enabled | bool | `true` | disable wordpress installation |
 
 ----------------------------------------------

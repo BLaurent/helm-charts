@@ -1,7 +1,7 @@
 apiVersion: v0
 kind: ImagesLock
 metadata:
-  generatedAt: "2023-12-11T14:38:15.714646Z"
+  generatedAt: "2023-12-19T10:05:08.64281Z"
   generatedBy: Distribution Tooling for Helm
 chart:
   name: simple-web-api
@@ -12,85 +12,13 @@ images:
     image: blaurent/simple-web-api:v1.16.0
     chart: simple-web-api
     digests:
-      - digest: sha256:123bea21f884b75b774c001aedf5c7fe61eb33f88f0678f3907a2fbd573b0ae1
-        arch: linux/arm64
-  - name: apache-exporter
-    image: docker.io/bitnami/apache-exporter:1.0.3-debian-11-r2
-    chart: wordpress
-    digests:
-      - digest: sha256:d990fe072ad20b4e631d7a0bc6f06ef05a6e1804e720996302246096bedcdf8d
-        arch: linux/amd64
-      - digest: sha256:0485ac98bbdb67b5ba432d5153e0f1e4cbca38d4d50acebe5fc34782af2064e0
-        arch: linux/arm64
-  - name: os-shell
-    image: docker.io/bitnami/os-shell:11-debian-11-r92
-    chart: wordpress
-    digests:
-      - digest: sha256:4ecfc3f9975a81d23bf5f3f49e5c8735208ad685dbc0cc131209d3b7d82701a6
-        arch: linux/amd64
-      - digest: sha256:7e98a85bf40b167c67c37bf85b805bb4b8be68309abc0df55482fc252a921548
-        arch: linux/arm64
-  - name: wordpress
-    image: docker.io/bitnami/wordpress:6.4.2-debian-11-r0
-    chart: wordpress
-    digests:
-      - digest: sha256:557e6d367ca0a5ecfb511a4eaf2ff5eea2d6e0c7d4c0bf9383d83595196f093d
-        arch: linux/amd64
-      - digest: sha256:978d0fd2bd12ea8f3c7e094a9dbc2b47a15739573b951750d6174ed902d632cd
-        arch: linux/arm64
-  - name: mariadb
-    image: docker.io/bitnami/mariadb:11.1.3-debian-11-r0
-    chart: mariadb
-    digests:
-      - digest: sha256:ec252de855742584bb2dace25f5cd83ccfdde4f61961cca00fc29a1d5200c2aa
-        arch: linux/amd64
-      - digest: sha256:9860246dc558409755717381f434ba0490a9a29241d1fd95e1dbb97ef12b9428
-        arch: linux/arm64
-  - name: mysqld-exporter
-    image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
-    chart: mariadb
-    digests:
-      - digest: sha256:4edc0e18244c7442eeb78e544150d2dc882b15dc666f14914a77451ac945f842
-        arch: linux/amd64
-      - digest: sha256:6f912f4584a18f154cdd29186075ea166fb3a7fbe6b05bb1f4e458eec0481bfb
-        arch: linux/arm64
-  - name: os-shell
-    image: docker.io/bitnami/os-shell:11-debian-11-r91
-    chart: mariadb
-    digests:
-      - digest: sha256:13a0068e1f90216e7450c1284d51d1e2770db4eb40a51692de213d1e3a402a34
-        arch: linux/amd64
-      - digest: sha256:ccbf37fe114e2ba833082b3f2c36a0e16d4c04ee92dce50272d66393706fe938
-        arch: linux/arm64
-  - name: memcached-exporter
-    image: docker.io/bitnami/memcached-exporter:0.13.0-debian-11-r122
-    chart: memcached
-    digests:
-      - digest: sha256:a9cd848a224ae34471dd62d8815a6817733ddc808e28b5b67f0c02d99e284004
-        arch: linux/amd64
-      - digest: sha256:243de41bc0e2fd1457dea33f0354ff3245ec8242e82c5bd124d4de91d19763f1
-        arch: linux/arm64
-  - name: memcached
-    image: docker.io/bitnami/memcached:1.6.22-debian-11-r1
-    chart: memcached
-    digests:
-      - digest: sha256:d4c4ba01c45b2fdbc58cbb94af8ed0690c46ce2c70b34de49751c8920042af02
-        arch: linux/amd64
-      - digest: sha256:144a8475a0dbd1bc62e3980881a1f3c1460df47ec57a1d87dc8a9509246f00b1
-        arch: linux/arm64
-  - name: os-shell
-    image: docker.io/bitnami/os-shell:11-debian-11-r91
-    chart: memcached
-    digests:
-      - digest: sha256:13a0068e1f90216e7450c1284d51d1e2770db4eb40a51692de213d1e3a402a34
-        arch: linux/amd64
-      - digest: sha256:ccbf37fe114e2ba833082b3f2c36a0e16d4c04ee92dce50272d66393706fe938
+      - digest: sha256:5a1e4ac12003e850a73f3d642ec9068923f7edda1d042bb97a80160ac73cf962
         arch: linux/arm64
   - name: echo-web-api
     image: blaurent/echo-web-api:v1.6.0
     chart: echo-web-api
     digests:
-      - digest: sha256:d1438f2944d7e75c84604fed05c3ad4ff2301dd4fc22c7ceeb76bbf07353aeb7
+      - digest: sha256:33033f717b5a3713f09f830a9f07599ce195fb5d534f865e36040deeaa6b993c
         arch: linux/arm64
   - name: os-shell
     image: docker.io/bitnami/os-shell:11-debian-11-r91
@@ -139,4 +67,76 @@ images:
       - digest: sha256:d39f1ff561bd44cb2926558f3bff36a262a8590791bb6281e27eea03091e2ca8
         arch: linux/amd64
       - digest: sha256:4942e872ecd2b3b79a140868e5bc5316026bed1860c9398baee002b8e9c229f7
+        arch: linux/arm64
+  - name: apache-exporter
+    image: docker.io/bitnami/apache-exporter:1.0.3-debian-11-r2
+    chart: wordpress
+    digests:
+      - digest: sha256:d990fe072ad20b4e631d7a0bc6f06ef05a6e1804e720996302246096bedcdf8d
+        arch: linux/amd64
+      - digest: sha256:0485ac98bbdb67b5ba432d5153e0f1e4cbca38d4d50acebe5fc34782af2064e0
+        arch: linux/arm64
+  - name: os-shell
+    image: docker.io/bitnami/os-shell:11-debian-11-r92
+    chart: wordpress
+    digests:
+      - digest: sha256:4ecfc3f9975a81d23bf5f3f49e5c8735208ad685dbc0cc131209d3b7d82701a6
+        arch: linux/amd64
+      - digest: sha256:7e98a85bf40b167c67c37bf85b805bb4b8be68309abc0df55482fc252a921548
+        arch: linux/arm64
+  - name: wordpress
+    image: docker.io/bitnami/wordpress:6.4.2-debian-11-r6
+    chart: wordpress
+    digests:
+      - digest: sha256:a12f3c22871af314ecd942c137799a5b70dcd104b4b81d4357fa3233219360f4
+        arch: linux/amd64
+      - digest: sha256:10048ce067db4b4f29eb6a9d6f6e67a4512d3c0bb587732057bfc3a59cad29d9
+        arch: linux/arm64
+  - name: memcached-exporter
+    image: docker.io/bitnami/memcached-exporter:0.13.0-debian-11-r122
+    chart: memcached
+    digests:
+      - digest: sha256:a9cd848a224ae34471dd62d8815a6817733ddc808e28b5b67f0c02d99e284004
+        arch: linux/amd64
+      - digest: sha256:243de41bc0e2fd1457dea33f0354ff3245ec8242e82c5bd124d4de91d19763f1
+        arch: linux/arm64
+  - name: memcached
+    image: docker.io/bitnami/memcached:1.6.22-debian-11-r1
+    chart: memcached
+    digests:
+      - digest: sha256:d4c4ba01c45b2fdbc58cbb94af8ed0690c46ce2c70b34de49751c8920042af02
+        arch: linux/amd64
+      - digest: sha256:144a8475a0dbd1bc62e3980881a1f3c1460df47ec57a1d87dc8a9509246f00b1
+        arch: linux/arm64
+  - name: os-shell
+    image: docker.io/bitnami/os-shell:11-debian-11-r91
+    chart: memcached
+    digests:
+      - digest: sha256:13a0068e1f90216e7450c1284d51d1e2770db4eb40a51692de213d1e3a402a34
+        arch: linux/amd64
+      - digest: sha256:ccbf37fe114e2ba833082b3f2c36a0e16d4c04ee92dce50272d66393706fe938
+        arch: linux/arm64
+  - name: mariadb
+    image: docker.io/bitnami/mariadb:11.1.3-debian-11-r0
+    chart: mariadb
+    digests:
+      - digest: sha256:ec252de855742584bb2dace25f5cd83ccfdde4f61961cca00fc29a1d5200c2aa
+        arch: linux/amd64
+      - digest: sha256:9860246dc558409755717381f434ba0490a9a29241d1fd95e1dbb97ef12b9428
+        arch: linux/arm64
+  - name: mysqld-exporter
+    image: docker.io/bitnami/mysqld-exporter:0.15.0-debian-11-r71
+    chart: mariadb
+    digests:
+      - digest: sha256:4edc0e18244c7442eeb78e544150d2dc882b15dc666f14914a77451ac945f842
+        arch: linux/amd64
+      - digest: sha256:6f912f4584a18f154cdd29186075ea166fb3a7fbe6b05bb1f4e458eec0481bfb
+        arch: linux/arm64
+  - name: os-shell
+    image: docker.io/bitnami/os-shell:11-debian-11-r91
+    chart: mariadb
+    digests:
+      - digest: sha256:13a0068e1f90216e7450c1284d51d1e2770db4eb40a51692de213d1e3a402a34
+        arch: linux/amd64
+      - digest: sha256:ccbf37fe114e2ba833082b3f2c36a0e16d4c04ee92dce50272d66393706fe938
         arch: linux/arm64

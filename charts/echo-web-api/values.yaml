@@ -1,3 +1,4 @@
+# -- common parameters
 commonSettings:
   image:
     # -- default registry to use
