@@ -6,7 +6,7 @@ type: application
 version: 0.5.0
 appVersion: v1.16.0
 annotations:
-  extension_version: 0.0.1
+  extensionVersion: 0.0.1
   category: Infrastructure
   images: |
     - name: simple-web-api

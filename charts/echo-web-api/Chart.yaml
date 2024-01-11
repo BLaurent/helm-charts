@@ -6,7 +6,7 @@ type: application
 version: 0.6.0
 appVersion: v1.6.0
 annotations:
-  extension_version: 0.0.1
+  extensionVersion: 0.0.1
   category: Infrastructure
   images: |
     - name: echo-web-api
