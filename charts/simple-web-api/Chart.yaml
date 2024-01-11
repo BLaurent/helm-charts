@@ -3,7 +3,7 @@ name: simple-web-api
 icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
 description: An Helm chart to test deployment and various concept in rust
 type: application
-version: 0.5.0
+version: 0.6.0
 appVersion: v1.16.0
 annotations:
   extensionVersion: 0.0.1
@@ -33,7 +33,7 @@ dependencies:
   - condition: echo.enabled
     name: echo-web-api
     repository: oci://registry-1.docker.io/blaurent
-    version: 0.6.x
+    version: 0.7.x
   - condition: wordpress.enabled
     name: wordpress
     repository: https://charts.bitnami.com/bitnami

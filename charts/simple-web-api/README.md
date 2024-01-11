@@ -1,6 +1,6 @@
 # simple-web-api
 
-![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.16.0](https://img.shields.io/badge/AppVersion-v1.16.0-informational?style=flat-square)
+![Version: 0.6.0](https://img.shields.io/badge/Version-0.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.16.0](https://img.shields.io/badge/AppVersion-v1.16.0-informational?style=flat-square)
 
 An Helm chart to test deployment and various concept in rust
 
@@ -10,7 +10,7 @@ An Helm chart to test deployment and various concept in rust
 |------------|------|---------|
 | https://charts.bitnami.com/bitnami | wordpress | 18.1.x |
 | oci://registry-1.docker.io/bitnamicharts | nats | 7.9.x |
-| oci://registry-1.docker.io/blaurent | echo-web-api | 0.6.x |
+| oci://registry-1.docker.io/blaurent | echo-web-api | 0.7.x |
 
 ## Values
 
