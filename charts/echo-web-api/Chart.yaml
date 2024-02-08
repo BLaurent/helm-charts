@@ -3,14 +3,14 @@ name: echo-web-api
 icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
 description: An Helm chart to test deployment and various concept in python
 type: application
-version: 0.7.0
-appVersion: v1.6.0
+version: 0.7.1
+appVersion: v1.6.1
 annotations:
   extensionVersion: 0.0.1
   category: Infrastructure
   images: |
     - name: echo-web-api
-      image: blaurent/echo-web-api:v1.6.0
+      image: blaurent/echo-web-api:v1.6.1
   env: |
     - name: NB_WORKERS
       value: 4 
@@ -19,4 +19,4 @@ dependencies:
   - condition: redis.enabled
     name: redis
     repository: oci://registry-1.docker.io/bitnamicharts
-    version: 18.4.x
+    version: "18.4.x"

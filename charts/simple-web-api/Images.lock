@@ -1,18 +1,18 @@
 apiVersion: v0
 kind: ImagesLock
 metadata:
-  generatedAt: "2024-01-11T11:41:38.905745Z"
+  generatedAt: "2024-02-08T15:42:28.823654Z"
   generatedBy: Distribution Tooling for Helm
 chart:
   name: simple-web-api
-  version: 0.6.0
-  appVersion: v1.16.0
+  version: 0.7.0
+  appVersion: v1.17.0
 images:
   - name: simple-web-api
     image: blaurent/simple-web-api:v1.16.0
     chart: simple-web-api
     digests:
-      - digest: sha256:5a1e4ac12003e850a73f3d642ec9068923f7edda1d042bb97a80160ac73cf962
+      - digest: sha256:9a4b94fc371d204c6098af8e6699236f934e7960927fd50dbf562de849092ae5
         arch: linux/arm64
   - name: echo-web-api
     image: blaurent/echo-web-api:v1.6.0

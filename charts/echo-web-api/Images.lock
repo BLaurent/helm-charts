@@ -1,18 +1,18 @@
 apiVersion: v0
 kind: ImagesLock
 metadata:
-  generatedAt: "2024-01-11T11:40:23.99691Z"
+  generatedAt: "2024-02-08T16:16:20.920002Z"
   generatedBy: Distribution Tooling for Helm
 chart:
   name: echo-web-api
-  version: 0.7.0
-  appVersion: v1.6.0
+  version: 0.7.1
+  appVersion: v1.6.1
 images:
   - name: echo-web-api
-    image: blaurent/echo-web-api:v1.6.0
+    image: blaurent/echo-web-api:v1.6.1
     chart: echo-web-api
     digests:
-      - digest: sha256:cac13f439ee379f060ef920750f23db1acab09879f87b9a7be38027e9a9667f1
+      - digest: sha256:b0ba2d16d430cbaf1f18d1d89a126ea30a3b362c831ed65a296a9ff8303515fc
         arch: linux/arm64
   - name: os-shell
     image: docker.io/bitnami/os-shell:11-debian-11-r91
