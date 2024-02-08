@@ -33,6 +33,7 @@ jobs:
         with: 
           version: 'latest'
           token: "${{ secrets.GITHUB_TOKEN }}" 
+        id: install  
 
       - name: Add dependency chart repo
         run: |
@@ -50,7 +51,10 @@ jobs:
             if [ -z "${pkg:-}" ]; then
               break
             fi
-            if ! helm push "${pkg}" "oci://ghcr.io/${GITHUB_REPOSITORY_OWNER}/charts"; then
-              echo '::warning:: helm push failed!'
-            fi
+
+            # convert uppercase->lowercase to make sure it follows oci rules
+            lowercase=$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')
+            
+            echo "Pushing package - ${pkg} to repository - ${lowercase}"
+            helm push "${pkg}" "oci://ghcr.io/${lowercase}/charts"
           done
