@@ -43,6 +43,14 @@ jobs:
         uses: helm/chart-releaser-action@v1.6.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          CR_SKIP_EXISTING: true
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${REGISTRY}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push charts to GHCR
         run: |
@@ -54,7 +62,6 @@ jobs:
 
             # convert uppercase->lowercase to make sure it follows oci rules
             lowercase=$(echo "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')
-            
             echo "Pushing package - ${pkg} to repository - ${lowercase}"
-            helm push "${pkg}" "oci://ghcr.io/${lowercase}/charts"
+            helm push "${pkg}" "oci://${REGISTRY}/${lowercase}/charts"
           done
