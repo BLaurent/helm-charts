@@ -10,9 +10,6 @@ commonSettings:
   # -- control whether we want an ingress to be created
   ingress: true
   podLabels: {}
-  annotations:
-    # -- add version as annotation
-    version: 1.6.0
 
 echoWebApi:
   # -- number of replicas we want between (1-10) are valid values
@@ -23,7 +20,7 @@ echoWebApi:
     # -- default repository
     repository: blaurent/echo-web-api
     # -- tag of the container
-    tag: v1.6.0
+    tag: 1.6.0
   resources:
     limits:
       # -- 20% of 1 cpu
