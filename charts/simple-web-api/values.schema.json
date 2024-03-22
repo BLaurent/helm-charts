@@ -40,24 +40,12 @@
         },
         "podLabels": {
           "type": "object"
-        },
-        "annotations": {
-          "type": "object",
-          "properties": {
-            "version": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "version"
-          ]
         }
       },
       "required": [
         "image",
         "ingress",
-        "podLabels",
-        "annotations"
+        "podLabels"
       ]
     },
     "simpleWebApi": {
@@ -69,11 +57,16 @@
           "minimum": 1,
           "maximum": 10
         },
-        "NB_WORKERS": {
-          "type": "integer",
-          "default": 2,
-          "minimum": 1,
-          "maximum": 20
+        "env": {
+          "type": "object",
+          "properties": {
+            "NB_WORKERS": {
+              "type": "integer",
+              "default": 2,
+              "minimum": 1,
+              "maximum": 20
+            }
+          }
         },
         "image": {
           "type": "object",
@@ -85,7 +78,7 @@
             "tag": {
               "type": "string",
               "default": "Chart.appVersion",
-              "pattern": "^(?P<prefix>v)(?P<major>0|[1-9]\\d*)\\.(?P<minor>0|[1-9]\\d*)\\.(?P<patch>0|[1-9]\\d*)(?:-(?P<prerelease>(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+              "pattern": "^(?P<major>0|[1-9]\\d*)\\.(?P<minor>0|[1-9]\\d*)\\.(?P<patch>0|[1-9]\\d*)(?:-(?P<prerelease>(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
             }
           },
           "required": [
@@ -139,7 +132,6 @@
       },
       "required": [
         "replicaCount",
-        "NB_WORKERS",
         "image",
         "resources"
       ]

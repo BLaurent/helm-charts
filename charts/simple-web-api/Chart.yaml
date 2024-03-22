@@ -4,27 +4,20 @@ icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
 description: An Helm chart to test deployment and various concept in rust
 type: application
 version: 0.7.2
-appVersion: v1.17.0
+appVersion: 1.17.0
 annotations:
   extensionVersion: 0.0.1
   category: Infrastructure
   images: |
     - name: simple-web-api
-      image: blaurent/simple-web-api:v1.16.0
+      image: blaurent/simple-web-api:1.17.0
   requirements: |
-    - name: echo-web-api 
+    - name: echo-web-api
       type: helm
       version: "~0.7.0"
     - name: flask-web-api
-      type: service 
+      type: "service"
       version: "0.0.1"
-  env: |
-    - name: NB_WORKERS
-      value: 2
-      description: "Set the number of workers to be used. This correspond to the number of logical cpus"
-    - name: POOL_SIZE
-      value: 10 
-      description: "Set the size of the memory pool to be used in http server"
 dependencies:
   - condition: nats.enabled
     name: nats
@@ -38,4 +31,3 @@ dependencies:
     name: wordpress
     repository: https://charts.bitnami.com/bitnami
     version: "18.1.x"
-
