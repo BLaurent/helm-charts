@@ -4,9 +4,9 @@ dependencies:
   version: 7.9.10
 - name: echo-web-api
   repository: oci://registry-1.docker.io/blaurent
-  version: 0.7.3
+  version: 0.7.4
 - name: wordpress
   repository: https://charts.bitnami.com/bitnami
   version: 18.1.30
-digest: sha256:c34581056717479b395c566e91eec03381224f3202e3b323dbc9c2d1cffea307
-generated: "2024-02-09T14:57:13.69069+01:00"
+digest: sha256:0e303437e916b089e3d054e3d529a880621704cea3c489374164cbc46adf9878
+generated: "2024-04-30T16:03:00.817384+02:00"

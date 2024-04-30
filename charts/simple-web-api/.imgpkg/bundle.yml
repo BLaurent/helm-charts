@@ -1,0 +1,16 @@
+version:
+  apiversion: imgpkg.carvel.dev/v1alpha1
+  kind: Bundle
+metadata:
+  category: Infrastructure
+  extensionVersion: 0.0.1
+  name: simple-web-api
+  requirements: |
+    - name: echo-web-api
+      type: helm
+      version: "~0.7.0"
+    - name: flask-web-api
+      type: "service"
+      version: "0.0.1"
+authors: []
+websites: []

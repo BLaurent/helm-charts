@@ -11,12 +11,8 @@ annotations:
   images: |
     - name: echo-web-api
       image: blaurent/echo-web-api:1.6.1
-  env: |
-    - name: NB_WORKERS
-      value: 4 
-      description: "Set the number of workers to be used."
 dependencies:
-  - condition: redis.enabled
-    name: redis
-    repository: oci://registry-1.docker.io/bitnamicharts
-    version: "18.4.x"
+- condition: redis.enabled
+  name: redis
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 18.4.x

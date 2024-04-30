@@ -11,23 +11,23 @@ annotations:
   images: |
     - name: simple-web-api
       image: blaurent/simple-web-api:1.17.0
-  requirements: |
-    - name: echo-web-api
+  requires: |
+    - name: doom-web-api
       type: helm
-      version: "~0.7.0"
+      version: "~0.2.0"
     - name: flask-web-api
       type: "service"
       version: "0.0.1"
 dependencies:
-  - condition: nats.enabled
-    name: nats
-    repository: oci://registry-1.docker.io/bitnamicharts
-    version: "7.9.x"
-  - condition: echo.enabled
-    name: echo-web-api
-    repository: oci://registry-1.docker.io/blaurent
-    version: "0.7.x"
-  - condition: wordpress.enabled
-    name: wordpress
-    repository: https://charts.bitnami.com/bitnami
-    version: "18.1.x"
+- condition: nats.enabled
+  name: nats
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 7.9.x
+- condition: echo.enabled
+  name: echo-web-api
+  repository: oci://registry-1.docker.io/blaurent
+  version: 0.7.x
+- condition: wordpress.enabled
+  name: wordpress
+  repository: https://charts.bitnami.com/bitnami
+  version: 18.1.x

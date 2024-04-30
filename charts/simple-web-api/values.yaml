@@ -1,52 +1,27 @@
-# -- common parameters
 commonSettings:
-  # -- configure image related parameters
   image:
-    # -- default registry to use
     registryUrl: docker.io
-    # -- default container pull policy
     pullPolicy: Always
-    # -- name of the repository to use
     repository: blaurent
-  # -- control whether we want an ingress to be created
   ingress: true
   podLabels: {}
-# -- Configuration of the simple-web-api service
 simpleWebApi:
   env:
-    # -- set the env variable NB_WORKERS to 2, this limit the number of logical cpus used by the service
     NB_WORKERS: 2
-  # -- number of replicas we want between (1-10) are valid values
   replicaCount: 2
-  # -- configure image parameters for simpleWebApi service
   image:
-    # -- default repository
     repository: blaurent/simple-web-api
-    # -- tag of the container
-    tag: 1.16.0
-  # -- Configuration of ressources
+    tag: 1.17.0
   resources:
-    # -- define hardceiling on how ressources we can use
     limits:
-      # -- 20% of 1 cpu
-      cpu: "200m"
-      # -- 128 mebibytes
-      memory: "128Mi"
-      # -- define weighting on how ressources we can use
+      cpu: 200m
+      memory: 128Mi
     requests:
-      # -- 10% of 1 cpu
-      cpu: "100m"
-      # -- 64 mebibytes
-      memory: "64Mi"
-# -- configure sub-chart for nats
+      cpu: 100m
+      memory: 64Mi
 nats:
-  # -- disable nats installation
   enabled: true
-# -- configure sub-chart for echo
 echo:
-  # -- disable echo installation
   enabled: true
-# -- configure sub-chart for wordpress
 wordpress:
-  # -- disable wordpress installation
   enabled: true

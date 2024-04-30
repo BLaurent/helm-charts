@@ -1,0 +1,20 @@
+#@ load("@ytt:data", "data")
+apiVersion: v2
+name: echo-web-api
+icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
+description: An Helm chart to test deployment and various concept in python
+type: application
+version: #@ data.values.CHART_VERSION
+appVersion: #@ data.values.APP_VERSION
+annotations:
+  extensionVersion: 0.0.1
+  category: Infrastructure
+  #@yaml/text-templated-strings
+  images: |
+    - name: echo-web-api
+      image: (@= "blaurent/echo-web-api:{}".format(data.values.APP_VERSION) @)
+dependencies:
+  - condition: redis.enabled
+    name: redis
+    repository: oci://registry-1.docker.io/bitnamicharts
+    version: "18.4.x"

@@ -1,0 +1,35 @@
+#@ load("@ytt:data", "data")
+apiVersion: v2
+name: simple-web-api
+icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
+description: An Helm chart to test deployment and various concept in rust
+type: application
+version: #@ data.values.CHART_VERSION
+appVersion: #@ data.values.APP_VERSION
+annotations:
+  extensionVersion: 0.0.1
+  category: Infrastructure
+  #@yaml/text-templated-strings
+  images: |
+    - name: simple-web-api
+      image: (@= "blaurent/simple-web-api:{}".format(data.values.APP_VERSION) @)
+  requires: |
+    - name: doom-web-api
+      type: helm
+      version: "~0.2.0"
+    - name: flask-web-api
+      type: "service"
+      version: "0.0.1"
+dependencies:
+  - condition: nats.enabled
+    name: nats
+    repository: oci://registry-1.docker.io/bitnamicharts
+    version: "7.9.x"
+  - condition: echo.enabled
+    name: echo-web-api
+    repository: oci://registry-1.docker.io/blaurent
+    version: "0.7.x"
+  - condition: wordpress.enabled
+    name: wordpress
+    repository: https://charts.bitnami.com/bitnami
+    version: "18.1.x"
