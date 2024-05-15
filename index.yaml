@@ -235,6 +235,43 @@ entries:
       images: |
         - name: simple-web-api
           image: blaurent/simple-web-api:1.17.0
+      requires: |
+        - name: doom-web-api
+          type: helm
+          version: "~0.2.0"
+        - name: flask-web-api
+          type: "service"
+          version: "0.0.1"
+    apiVersion: v2
+    appVersion: 1.17.0
+    created: "2024-05-15T15:47:32.142387883Z"
+    dependencies:
+    - condition: nats.enabled
+      name: nats
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 7.9.x
+    - condition: echo.enabled
+      name: echo-web-api
+      repository: oci://registry-1.docker.io/blaurent
+      version: 0.7.x
+    - condition: wordpress.enabled
+      name: wordpress
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.1.x
+    description: An Helm chart to test deployment and various concept in rust
+    digest: 1fae4ca6fc2a69955928ec77aa712c51de45f48cf8d52738432d60925e8ad82c
+    icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
+    name: simple-web-api
+    type: application
+    urls:
+    - https://github.com/BLaurent/helm-charts/releases/download/simple-web-api-0.7.5/simple-web-api-0.7.5.tgz
+    version: 0.7.5
+  - annotations:
+      category: Infrastructure
+      extensionVersion: 0.0.1
+      images: |
+        - name: simple-web-api
+          image: blaurent/simple-web-api:1.17.0
       requirements: |
         - name: echo-web-api
           type: helm
@@ -546,4 +583,4 @@ entries:
     urls:
     - https://github.com/BLaurent/helm-charts/releases/download/simple-web-api-0.1.0/simple-web-api-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-29T16:06:17.307790668Z"
+generated: "2024-05-15T15:47:32.142453715Z"
