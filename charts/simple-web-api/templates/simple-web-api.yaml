@@ -14,7 +14,7 @@ metadata:
 spec:
   replicas: {{ .Values.simpleWebApi.replicaCount }}
   env:
-    - name: NB_WORKERS 
+    - name: NB_WORKERS
       value: {{ quote .Values.simpleWebApi.env.NB_WORKERS }}
   securityContext:
     {{- tuple "simple-web-api" | include "imaging-fabric.securityContext" | nindent 4 }}
@@ -40,7 +40,7 @@ spec:
           - port: 8080
             name: http
     - ingress:
-        host: localhost
+        host: simple-web-api.if.local
         routes:
           - httpPath: /v1
             portName: http
@@ -48,7 +48,7 @@ spec:
               - GET
           - httpPath: /v1/echo
             portName: http
-            httpMethod: 
+            httpMethod:
               - GET
           - httpPath: /v1/healthz
             portName: http

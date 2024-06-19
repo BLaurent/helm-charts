@@ -3,8 +3,11 @@ name: echo-web-api
 icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
 description: An Helm chart to test deployment and various concept in python
 type: application
-version: 0.7.4
+sources:
+- https://gitlab-gxp.cloud.health.ge.com/100026625/sandbox
+version: 0.7.5
 appVersion: 1.6.1
+kubeVersion: 1.29.4
 annotations:
   extensionVersion: 0.0.1
   category: Infrastructure

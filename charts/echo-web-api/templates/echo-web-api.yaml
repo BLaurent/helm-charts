@@ -17,7 +17,7 @@ metadata:
 spec:
   replicas: {{ .Values.echoWebApi.replicaCount }}
   env:
-    - name: NB_WORKERS 
+    - name: NB_WORKERS
       value: {{ quote .Values.echoWebApi.NB_WORKERS }}
   securityContext:
     {{- tuple "echo-web-api" | include "imaging-fabric.securityContext" | nindent 4 }}
@@ -43,10 +43,11 @@ spec:
           - port: 8080
             name: http
     - ingress:
+        host: echo-web-api.if.local
         routes:
           - httpPath: /v1/echo
             portName: http
-            httpMethod: 
+            httpMethod:
               - GET
           - httpPath: /v1/healthz
             portName: http

@@ -1,15 +1,21 @@
 # simple-web-api
 
-![Version: 0.7.5](https://img.shields.io/badge/Version-0.7.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.17.0](https://img.shields.io/badge/AppVersion-1.17.0-informational?style=flat-square)
+![Version: 0.7.5](https://img.shields.io/badge/Version-0.7.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.18.0](https://img.shields.io/badge/AppVersion-1.18.0-informational?style=flat-square)
 
 An Helm chart to test deployment and various concept in rust
 
+## Source Code
+
+* <https://gitlab-gxp.cloud.health.ge.com/100026625/sandbox>
+
 ## Requirements
+
+Kubernetes: `1.29.4`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | wordpress | 18.1.x |
-| oci://registry-1.docker.io/bitnamicharts | nats | 7.9.x |
+| https://charts.bitnami.com/bitnami | wordpress | 22.x.x |
+| oci://registry-1.docker.io/bitnamicharts | nats | 8.x.x |
 | oci://registry-1.docker.io/blaurent | echo-web-api | 0.7.x |
 
 ## Values
@@ -25,7 +31,7 @@ An Helm chart to test deployment and various concept in rust
 | nats.enabled | bool | `true` |  |
 | simpleWebApi.env.NB_WORKERS | int | `2` |  |
 | simpleWebApi.image.repository | string | `"blaurent/simple-web-api"` |  |
-| simpleWebApi.image.tag | string | `"1.17.0"` |  |
+| simpleWebApi.image.tag | string | `"1.18.0"` |  |
 | simpleWebApi.replicaCount | int | `2` |  |
 | simpleWebApi.resources.limits.cpu | string | `"200m"` |  |
 | simpleWebApi.resources.limits.memory | string | `"128Mi"` |  |
