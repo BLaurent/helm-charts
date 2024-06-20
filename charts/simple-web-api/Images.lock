@@ -1,7 +1,7 @@
 apiVersion: v0
 kind: ImagesLock
 metadata:
-  generatedAt: "2024-06-19T12:01:22.83039Z"
+  generatedAt: "2024-06-20T09:18:50.960965Z"
   generatedBy: Distribution Tooling for Helm
 chart:
   name: simple-web-api
@@ -85,12 +85,12 @@ images:
       - digest: sha256:5e50cf86dca8792ea26f5f9899ccf46b9ffd9ded6126bc1dcc348ae92a0063f5
         arch: linux/arm64
   - name: wordpress
-    image: docker.io/bitnami/wordpress:6.5.4-debian-12-r4
+    image: docker.io/bitnami/wordpress:6.5.4-debian-12-r5
     chart: wordpress
     digests:
-      - digest: sha256:47cd7f684f75ab0bdbfb4aba132438c03bb2cca7a9a6f25b95da4ba350aef016
+      - digest: sha256:453ad131675a73f80c03e83182569ce96077dbab3b19943dc92a9523fb2f05c0
         arch: linux/amd64
-      - digest: sha256:c30cee586360c1a25ca2f217db0e33af888270647b7adbcdb86b1254800e6624
+      - digest: sha256:cdb044845ba031aad4286b7cd895f98ec2934e3246000aa8ccc3cb07729afbd9
         arch: linux/arm64
   - name: mariadb
     image: docker.io/bitnami/mariadb:11.3.2-debian-12-r6
