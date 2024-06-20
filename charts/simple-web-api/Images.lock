@@ -1,7 +1,7 @@
 apiVersion: v0
 kind: ImagesLock
 metadata:
-  generatedAt: "2024-06-20T09:58:56.259119Z"
+  generatedAt: "2024-06-20T10:18:04.225733Z"
   generatedBy: Distribution Tooling for Helm
 chart:
   name: simple-web-api
@@ -14,129 +14,99 @@ images:
     digests:
       - digest: sha256:6e29488b1332a79164fa8c458952427ed92826c9c85fa2dc57a9461b0e9573e8
         arch: linux/arm64
-  - name: echo-web-api
-    image: blaurent/echo-web-api:1.6.1
-    chart: echo-web-api
-    digests:
-      - digest: sha256:2ae5af89e609e2eb2bb8736cec6a31dc909ace460b98031c7e34fbac0d536fef
-        arch: linux/arm64
-  - name: os-shell
-    image: docker.io/bitnami/os-shell:11-debian-11-r91
-    chart: redis
-    digests:
-      - digest: sha256:13a0068e1f90216e7450c1284d51d1e2770db4eb40a51692de213d1e3a402a34
-        arch: linux/amd64
-      - digest: sha256:ccbf37fe114e2ba833082b3f2c36a0e16d4c04ee92dce50272d66393706fe938
-        arch: linux/arm64
-  - name: redis-exporter
-    image: docker.io/bitnami/redis-exporter:1.55.0-debian-11-r2
-    chart: redis
-    digests:
-      - digest: sha256:9a67c0b6930b742c6d6449e432219f7abb903a27d7226b42e82065054f27c6f8
-        arch: linux/amd64
-      - digest: sha256:a96c9aba11ec94b87124aaf15ce7a62bb012410b62fd9368cbbb7d71f57a8226
-        arch: linux/arm64
-  - name: redis-sentinel
-    image: docker.io/bitnami/redis-sentinel:7.2.3-debian-11-r1
-    chart: redis
-    digests:
-      - digest: sha256:49dbae39d5dcb6b4c1844d94b3b85363232162169aedde00dc331891365537d3
-        arch: linux/amd64
-      - digest: sha256:8f5893dd71ea2c96bfcac474b63456eb91d91d33e5e62d378d3efc24b06f55b6
-        arch: linux/arm64
-  - name: redis
-    image: docker.io/bitnami/redis:7.2.3-debian-11-r1
-    chart: redis
-    digests:
-      - digest: sha256:f7db3a51e2726109819b50004c3bbf8f1c792723af274f88532b8c3e64fcde0b
-        arch: linux/amd64
-      - digest: sha256:9417df92fa9ddfef3f937955b255a06f0959b9cd57c5d6a19d9b7c064a58bbc8
-        arch: linux/arm64
   - name: nats
     image: docker.io/bitnami/nats:2.10.16-debian-12-r1
     chart: nats
     digests:
-      - digest: sha256:e61b16453bd4c2ed397a250261550cf969092b503d0d978e055fc0534730209a
-        arch: linux/amd64
       - digest: sha256:1ff5ceaf635cd4e58aceb7dc5c5ea407fd4bd988c20806f1d1d6a731bd44e419
         arch: linux/arm64
   - name: nats-exporter
     image: docker.io/bitnami/nats-exporter:0.15.0-debian-12-r5
     chart: nats
     digests:
-      - digest: sha256:cf0e9b3aac024ff5da6bb47d62745c90417552d785d966fc1b68a968ceb7bf51
-        arch: linux/amd64
       - digest: sha256:ce4d2c3002d7d272efadbe6c21de074481663ffe99fdfe07eb774ed936a83c03
         arch: linux/arm64
   - name: apache-exporter
     image: docker.io/bitnami/apache-exporter:1.0.7-debian-12-r9
     chart: wordpress
     digests:
-      - digest: sha256:260a00808e7505def4fd48ec0b1579c7c39bede707f5c9ff988099d30c223753
-        arch: linux/amd64
       - digest: sha256:9b8c2196440d743d6a08c78d12a1cfa3527432e02e478c526a3ca9c676f6ede3
         arch: linux/arm64
   - name: os-shell
     image: docker.io/bitnami/os-shell:12-debian-12-r22
     chart: wordpress
     digests:
-      - digest: sha256:b5cf4d164823716e959f56f4e5ec9897ea55c452c4d5a86441a0c3bec5c63323
-        arch: linux/amd64
       - digest: sha256:5e50cf86dca8792ea26f5f9899ccf46b9ffd9ded6126bc1dcc348ae92a0063f5
         arch: linux/arm64
   - name: wordpress
     image: docker.io/bitnami/wordpress:6.5.4-debian-12-r5
     chart: wordpress
     digests:
-      - digest: sha256:453ad131675a73f80c03e83182569ce96077dbab3b19943dc92a9523fb2f05c0
-        arch: linux/amd64
       - digest: sha256:cdb044845ba031aad4286b7cd895f98ec2934e3246000aa8ccc3cb07729afbd9
         arch: linux/arm64
   - name: mariadb
     image: docker.io/bitnami/mariadb:11.3.2-debian-12-r6
     chart: mariadb
     digests:
-      - digest: sha256:f471445c07cdc52b6477ff0c2b8edace78a5838802bce07ececeb8b4d42dd398
-        arch: linux/amd64
       - digest: sha256:f667a472f3b6851b7087bdd2a1c719352382c904ebee7764d4ea81e90c14ed85
         arch: linux/arm64
   - name: mysqld-exporter
     image: docker.io/bitnami/mysqld-exporter:0.15.1-debian-12-r24
     chart: mariadb
     digests:
-      - digest: sha256:60ac070f1351dfef410c2cd0d2862c35fe517b092a143079bd3b793dd73d8d65
-        arch: linux/amd64
       - digest: sha256:7d5f4506b0603f28df1ed4e313ae90b94aeb8e401eac5dd82981efd841314e39
         arch: linux/arm64
   - name: os-shell
     image: docker.io/bitnami/os-shell:12-debian-12-r22
     chart: mariadb
     digests:
-      - digest: sha256:b5cf4d164823716e959f56f4e5ec9897ea55c452c4d5a86441a0c3bec5c63323
-        arch: linux/amd64
       - digest: sha256:5e50cf86dca8792ea26f5f9899ccf46b9ffd9ded6126bc1dcc348ae92a0063f5
         arch: linux/arm64
   - name: memcached
     image: docker.io/bitnami/memcached:1.6.28-debian-12-r0
     chart: memcached
     digests:
-      - digest: sha256:f5a26c97770e665e17fa4e1f1d9edd30edac3e27b195501585e0cdf21d954544
-        arch: linux/amd64
       - digest: sha256:af2bda2a5283524ee5f5bfc1a3dc6287ae6bfb2edfb54320e1dc354bd26c699a
         arch: linux/arm64
   - name: memcached-exporter
     image: docker.io/bitnami/memcached-exporter:0.14.3-debian-12-r8
     chart: memcached
     digests:
-      - digest: sha256:e986b36a473b9604adbb4070d60937dba1b29aeaa082ec3cb838bafeb88035e0
-        arch: linux/amd64
       - digest: sha256:9ff99d33dbd4875bbfc57783774329e88a8c4d13d9181877f51b3dcf5d79556d
         arch: linux/arm64
   - name: os-shell
     image: docker.io/bitnami/os-shell:12-debian-12-r22
     chart: memcached
     digests:
-      - digest: sha256:b5cf4d164823716e959f56f4e5ec9897ea55c452c4d5a86441a0c3bec5c63323
-        arch: linux/amd64
       - digest: sha256:5e50cf86dca8792ea26f5f9899ccf46b9ffd9ded6126bc1dcc348ae92a0063f5
+        arch: linux/arm64
+  - name: echo-web-api
+    image: blaurent/echo-web-api:1.6.1
+    chart: echo-web-api
+    digests:
+      - digest: sha256:19c1dd2a74bb7c8eae52574fc91ec0b2daf994dfd574aae24aaa102b9d639fb4
+        arch: linux/arm64
+  - name: os-shell
+    image: docker.io/bitnami/os-shell:11-debian-11-r91
+    chart: redis
+    digests:
+      - digest: sha256:ccbf37fe114e2ba833082b3f2c36a0e16d4c04ee92dce50272d66393706fe938
+        arch: linux/arm64
+  - name: redis-exporter
+    image: docker.io/bitnami/redis-exporter:1.55.0-debian-11-r2
+    chart: redis
+    digests:
+      - digest: sha256:a96c9aba11ec94b87124aaf15ce7a62bb012410b62fd9368cbbb7d71f57a8226
+        arch: linux/arm64
+  - name: redis-sentinel
+    image: docker.io/bitnami/redis-sentinel:7.2.3-debian-11-r1
+    chart: redis
+    digests:
+      - digest: sha256:8f5893dd71ea2c96bfcac474b63456eb91d91d33e5e62d378d3efc24b06f55b6
+        arch: linux/arm64
+  - name: redis
+    image: docker.io/bitnami/redis:7.2.3-debian-11-r1
+    chart: redis
+    digests:
+      - digest: sha256:9417df92fa9ddfef3f937955b255a06f0959b9cd57c5d6a19d9b7c064a58bbc8
         arch: linux/arm64
