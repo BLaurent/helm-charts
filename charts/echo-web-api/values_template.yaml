@@ -3,7 +3,7 @@
 commonSettings:
   image:
     # -- default registry to use
-    registryUrl: docker.io
+    registryUrl: zot.if.local
     # -- default container pull policy
     pullPolicy: Always
     # -- name of the repository to use
@@ -14,7 +14,6 @@ commonSettings:
   annotations:
     # -- add version as annotation
     version: 1.6.0
-
 echoWebApi:
   # -- number of replicas we want between (1-10) are valid values
   replicaCount: 2
@@ -22,7 +21,7 @@ echoWebApi:
   NB_WORKERS: 2
   image:
     # -- default repository
-    repository: blaurent/echo-web-api
+    repository: zot.if.local/blaurent/echo-web-api
     # -- tag of the container
     tag: #@ data.values.APP_VERSION
   resources:

@@ -15,7 +15,7 @@ annotations:
   #@yaml/text-templated-strings
   images: |
     - name: simple-web-api
-      image: (@= "blaurent/simple-web-api:{}".format(data.values.APP_VERSION) @)
+      image: (@= "zot.if.local/blaurent/simple-web-api:{}".format(data.values.APP_VERSION) @)
   gehealthcare.com/requires: |
     - name: doom-web-api
       type: helm

@@ -1,6 +1,6 @@
 commonSettings:
   image:
-    registryUrl: docker.io
+    registryUrl: zot.if.local
     pullPolicy: Always
     repository: blaurent
   ingress: true
@@ -11,7 +11,7 @@ echoWebApi:
   replicaCount: 2
   NB_WORKERS: 2
   image:
-    repository: blaurent/echo-web-api
+    repository: zot.if.local/blaurent/echo-web-api
     tag: 1.6.1
   resources:
     limits:

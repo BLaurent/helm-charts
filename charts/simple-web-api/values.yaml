@@ -1,6 +1,6 @@
 commonSettings:
   image:
-    registryUrl: docker.io
+    registryUrl: zot.if.local
     pullPolicy: Always
     repository: blaurent
   ingress: true
@@ -10,7 +10,7 @@ simpleWebApi:
     NB_WORKERS: 2
   replicaCount: 2
   image:
-    repository: blaurent/simple-web-api
+    repository: zot.if.local/blaurent/simple-web-api
     tag: 1.18.0
   resources:
     limits:

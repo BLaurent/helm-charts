@@ -1,6 +1,6 @@
 # simple-web-api
 
-![Version: 0.7.5](https://img.shields.io/badge/Version-0.7.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.18.0](https://img.shields.io/badge/AppVersion-1.18.0-informational?style=flat-square)
+![Version: 0.7.6](https://img.shields.io/badge/Version-0.7.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.18.0](https://img.shields.io/badge/AppVersion-1.18.0-informational?style=flat-square)
 
 An Helm chart to test deployment and various concept in rust
 
@@ -23,14 +23,14 @@ Kubernetes: `1.29.4`
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | commonSettings.image.pullPolicy | string | `"Always"` |  |
-| commonSettings.image.registryUrl | string | `"docker.io"` |  |
+| commonSettings.image.registryUrl | string | `"zot.if.local"` |  |
 | commonSettings.image.repository | string | `"blaurent"` |  |
 | commonSettings.ingress | bool | `true` |  |
 | commonSettings.podLabels | object | `{}` |  |
 | echo.enabled | bool | `true` |  |
 | nats.enabled | bool | `true` |  |
 | simpleWebApi.env.NB_WORKERS | int | `2` |  |
-| simpleWebApi.image.repository | string | `"blaurent/simple-web-api"` |  |
+| simpleWebApi.image.repository | string | `"zot.if.local/blaurent/simple-web-api"` |  |
 | simpleWebApi.image.tag | string | `"1.18.0"` |  |
 | simpleWebApi.replicaCount | int | `2` |  |
 | simpleWebApi.resources.limits.cpu | string | `"200m"` |  |

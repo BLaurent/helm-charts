@@ -4,7 +4,7 @@ commonSettings:
   # -- configure image related parameters
   image:
     # -- default registry to use
-    registryUrl: docker.io
+    registryUrl: zot.if.local
     # -- default container pull policy
     pullPolicy: Always
     # -- name of the repository to use
@@ -22,7 +22,7 @@ simpleWebApi:
   # -- configure image parameters for simpleWebApi service
   image:
     # -- default repository
-    repository: blaurent/simple-web-api
+    repository: zot.if.local/blaurent/simple-web-api
     # -- tag of the container
     tag: #@ data.values.APP_VERSION
     # -- Configuration of ressources
