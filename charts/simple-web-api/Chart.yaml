@@ -6,14 +6,14 @@ type: application
 sources:
 - https://gitlab-gxp.cloud.health.ge.com/100026625/sandbox
 version: 0.7.6
-appVersion: 1.18.0
+appVersion: 1.18.1
 kubeVersion: 1.29.4
 annotations:
   extensionVersion: 0.0.1
   category: Infrastructure
   images: |
     - name: simple-web-api
-      image: zot.if.local/blaurent/simple-web-api:1.18.0
+      image: zot.if.local/blaurent/simple-web-api:1.18.1
   gehealthcare.com/requires: |
     - name: doom-web-api
       type: helm

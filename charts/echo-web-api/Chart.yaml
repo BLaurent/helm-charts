@@ -6,14 +6,14 @@ type: application
 sources:
 - https://gitlab-gxp.cloud.health.ge.com/100026625/sandbox
 version: 0.7.6
-appVersion: 1.6.1
+appVersion: 1.6.2
 kubeVersion: 1.29.4
 annotations:
   extensionVersion: 0.0.1
   category: Infrastructure
   images: |
     - name: echo-web-api
-      image: zot.if.local/blaurent/echo-web-api:1.6.1
+      image: zot.if.local/blaurent/echo-web-api:1.6.2
 dependencies:
 - condition: redis.enabled
   name: redis

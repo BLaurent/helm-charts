@@ -12,7 +12,7 @@ echoWebApi:
   NB_WORKERS: 2
   image:
     repository: zot.if.local/blaurent/echo-web-api
-    tag: 1.6.1
+    tag: 1.6.2
   resources:
     limits:
       cpu: 200m
