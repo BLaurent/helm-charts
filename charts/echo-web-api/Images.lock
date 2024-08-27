@@ -1,11 +1,11 @@
 apiVersion: v0
 kind: ImagesLock
 metadata:
-  generatedAt: "2024-08-26T15:58:33.09009Z"
+  generatedAt: "2024-08-27T11:58:46.43677Z"
   generatedBy: Distribution Tooling for Helm
 chart:
   name: echo-web-api
-  version: 0.7.6
+  version: 0.7.7
   appVersion: 1.6.2
 images:
   - name: echo-web-api

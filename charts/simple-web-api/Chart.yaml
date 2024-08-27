@@ -5,7 +5,7 @@ description: An Helm chart to test deployment and various concept in rust
 type: application
 sources:
 - https://gitlab-gxp.cloud.health.ge.com/100026625/sandbox
-version: 0.7.6
+version: 0.7.7
 appVersion: 1.18.1
 kubeVersion: 1.29.4
 annotations:
