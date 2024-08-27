@@ -6,6 +6,31 @@ entries:
       extensionVersion: 0.0.1
       images: |
         - name: echo-web-api
+          image: zot.if.local/blaurent/echo-web-api:1.6.2
+    apiVersion: v2
+    appVersion: 1.6.2
+    created: "2024-08-27T12:03:35.387663361Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 18.4.x
+    description: An Helm chart to test deployment and various concept in python
+    digest: ca99d1b1ab5c228edbe1637475391fa2b4cc28665a03421de7c7e2fa96f889a1
+    icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
+    kubeVersion: 1.29.4
+    name: echo-web-api
+    sources:
+    - https://gitlab-gxp.cloud.health.ge.com/100026625/sandbox
+    type: application
+    urls:
+    - https://github.com/BLaurent/helm-charts/releases/download/echo-web-api-0.7.7/echo-web-api-0.7.7.tgz
+    version: 0.7.7
+  - annotations:
+      category: Infrastructure
+      extensionVersion: 0.0.1
+      images: |
+        - name: echo-web-api
           image: zot.if.local/blaurent/echo-web-api:1.6.1
     apiVersion: v2
     appVersion: 1.6.1
@@ -279,6 +304,46 @@ entries:
     - https://github.com/BLaurent/helm-charts/releases/download/renderer-0.1.0/renderer-0.1.0.tgz
     version: 0.1.0
   simple-web-api:
+  - annotations:
+      category: Infrastructure
+      extensionVersion: 0.0.1
+      gehealthcare.com/requires: |
+        - name: doom-web-api
+          type: helm
+          version: "~0.2.0"
+        - name: flask-web-api
+          type: "service"
+          version: "0.0.1"
+      images: |
+        - name: simple-web-api
+          image: zot.if.local/blaurent/simple-web-api:1.18.1
+    apiVersion: v2
+    appVersion: 1.18.1
+    created: "2024-08-27T12:03:35.643959407Z"
+    dependencies:
+    - condition: nats.enabled
+      name: nats
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 8.x.x
+    - condition: echo.enabled
+      name: echo-web-api
+      repository: oci://registry-1.docker.io/blaurent
+      version: 0.7.x
+    - condition: wordpress.enabled
+      name: wordpress
+      repository: https://charts.bitnami.com/bitnami
+      version: 22.x.x
+    description: An Helm chart to test deployment and various concept in rust
+    digest: 730de49c396d60a2a97f183932ecb4e725b38d1d3d3713e6f68cae92f32eb068
+    icon: https://s3-us-west-2.amazonaws.com/s.cdpn.io/49212/Icon-Small%403x.png
+    kubeVersion: 1.29.4
+    name: simple-web-api
+    sources:
+    - https://gitlab-gxp.cloud.health.ge.com/100026625/sandbox
+    type: application
+    urls:
+    - https://github.com/BLaurent/helm-charts/releases/download/simple-web-api-0.7.7/simple-web-api-0.7.7.tgz
+    version: 0.7.7
   - annotations:
       category: Infrastructure
       extensionVersion: 0.0.1
@@ -673,4 +738,4 @@ entries:
     urls:
     - https://github.com/BLaurent/helm-charts/releases/download/simple-web-api-0.1.0/simple-web-api-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-27T21:47:24.085289689Z"
+generated: "2024-08-27T12:03:35.644044928Z"
