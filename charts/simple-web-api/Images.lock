@@ -1,11 +1,11 @@
 apiVersion: v0
 kind: ImagesLock
 metadata:
-  generatedAt: "2024-08-27T12:01:55.476496Z"
+  generatedAt: "2024-08-27T15:48:28.664385Z"
   generatedBy: Distribution Tooling for Helm
 chart:
   name: simple-web-api
-  version: 0.7.7
+  version: 0.7.8
   appVersion: 1.18.1
 images:
   - name: simple-web-api
