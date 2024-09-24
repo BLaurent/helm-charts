@@ -15,7 +15,7 @@ annotations:
   #@yaml/text-templated-strings
   images: |
     - name: echo-web-api
-      image: (@= "zot.if.local/blaurent/echo-web-api:{}".format(data.values.APP_VERSION) @)
+      image: (@= "blaurent/echo-web-api:{}".format(data.values.IMAGE_VERSION) @)
 dependencies:
   - condition: redis.enabled
     name: redis

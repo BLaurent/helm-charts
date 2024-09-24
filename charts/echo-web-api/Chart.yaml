@@ -13,7 +13,7 @@ annotations:
   category: Infrastructure
   images: |
     - name: echo-web-api
-      image: zot.if.local/blaurent/echo-web-api:1.6.2
+      image: blaurent/echo-web-api:1.6.3
 dependencies:
 - condition: redis.enabled
   name: redis
