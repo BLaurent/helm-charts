@@ -13,7 +13,7 @@ annotations:
   category: Infrastructure
   images: |
     - name: simple-web-api
-      image: zot.if.local/blaurent/simple-web-api:1.18.3
+      image: zot.if.local/blaurent/simple-web-api:1.18.4
   gehealthcare.com/requires: |
     - name: doom-web-api
       type: helm
