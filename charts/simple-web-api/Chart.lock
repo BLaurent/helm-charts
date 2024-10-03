@@ -1,12 +1,12 @@
 dependencies:
 - name: nats
   repository: oci://registry-1.docker.io/bitnamicharts
-  version: 8.3.0
+  version: 8.4.4
 - name: echo-web-api
   repository: oci://registry-1.docker.io/blaurent
   version: 0.7.8
 - name: wordpress
   repository: https://charts.bitnami.com/bitnami
   version: 22.4.20
-digest: sha256:a3836776b554bf7171bf9a3aaa53136f63ca7cea9be4d91d9b20941a7d586731
-generated: "2024-08-27T17:48:20.903585+02:00"
+digest: sha256:c0a173c296484eeff21da904f1e92229becabeace28392c24bfee94bcf9162bc
+generated: "2024-10-02T11:53:13.501137+02:00"

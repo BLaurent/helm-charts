@@ -1,6 +1,6 @@
 # simple-web-api
 
-![Version: 0.7.8](https://img.shields.io/badge/Version-0.7.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.18.1](https://img.shields.io/badge/AppVersion-1.18.1-informational?style=flat-square)
+![Version: 0.7.8](https://img.shields.io/badge/Version-0.7.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.18.2](https://img.shields.io/badge/AppVersion-1.18.2-informational?style=flat-square)
 
 An Helm chart to test deployment and various concept in rust
 
@@ -31,7 +31,7 @@ Kubernetes: `1.30.2`
 | nats.enabled | bool | `true` |  |
 | simpleWebApi.env.NB_WORKERS | int | `2` |  |
 | simpleWebApi.image.repository | string | `"zot.if.local/blaurent/simple-web-api"` |  |
-| simpleWebApi.image.tag | string | `"1.18.1"` |  |
+| simpleWebApi.image.tag | string | `"1.18.2"` |  |
 | simpleWebApi.replicaCount | int | `2` |  |
 | simpleWebApi.resources.limits.cpu | string | `"200m"` |  |
 | simpleWebApi.resources.limits.memory | string | `"128Mi"` |  |
