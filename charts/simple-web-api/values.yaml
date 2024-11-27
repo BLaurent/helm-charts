@@ -8,10 +8,10 @@ commonSettings:
 simpleWebApi:
   env:
     NB_WORKERS: 2
-  replicaCount: 2
+  replicaCount: 5
   image:
     repository: zot.if.local/blaurent/simple-web-api
-    tag: 1.18.2
+    tag: 1.18.6
   resources:
     limits:
       cpu: 200m
